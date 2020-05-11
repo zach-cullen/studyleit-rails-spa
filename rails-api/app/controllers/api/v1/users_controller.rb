@@ -4,13 +4,12 @@ class Api::V1::UsersController < ApplicationController
   # GET /users
   def index
     @users = User.all
-
-    render json: @users
+    render json: @users, except: [:password_digest, :created_at, :updated_at]
   end
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, except: [:password_digest, :created_at, :updated_at]
   end
 
   # POST /users
