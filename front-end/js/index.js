@@ -1,8 +1,13 @@
-document.addEventListener("DOMContentLoaded", init())
+document.addEventListener("DOMContentLoaded", init)
 
 function init() {
   // get current user
   // render content
+  DOM.renderMainContainer();
   // handle events
-  console.log("Hi world!")
 }
+
+// function loadMainContainer() {
+//   const main = document.getElementById("main")
+//   main.innerHTML = Auth.renderLoginForm
+// }
