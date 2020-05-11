@@ -7,7 +7,7 @@ class Auth {
     const email = document.getElementById("login-form-input-email").value
     const password = document.getElementById("login-form-input-password").value
 
-    // create object to send in body of post request
+    // create object to send as payload
     const userInfo = {
       user: {
         email,
@@ -15,10 +15,14 @@ class Auth {
       }
     }
 
-    API.post("/sessions", userInfo)
-    // use Api service to send post` request to login with form data and handle promise
-    
-    // if valid user, create user object and hang on to cookie
+    // check for user input before sending (weak validation)
+    if (email && password) {
+      // use Api service to post userinfo to api and handle promise
+      API.post("/sessions", userInfo)
+    }
+    else {
+      alert("Email and password required for login.")
+    }
   }
 
   // provides html string that can be used to add html form to the dom
