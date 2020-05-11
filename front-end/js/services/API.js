@@ -1,5 +1,5 @@
 class API {
-  static options = {
+  static headers = {
     "ContentType": "application/json",
     "Accept": "application/json"
   }
@@ -9,7 +9,7 @@ class API {
     console.log(url, body)
     return fetch(this.baseURL + url, {
       method: "POST",
-      headers: this.options,
+      headers: this.headers,
       body: JSON.stringify(body)
     })
     .then(resp => resp.json())
