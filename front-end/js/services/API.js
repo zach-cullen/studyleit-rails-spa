@@ -1,6 +1,6 @@
 class API {
   static headers = {
-    "ContentType": "application/json",
+    "Content-Type": "application/json",
     "Accept": "application/json"
   }
   static baseURL = "http://localhost:3000/api/v1"
