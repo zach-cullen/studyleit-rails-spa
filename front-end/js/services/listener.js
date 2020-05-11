@@ -7,10 +7,21 @@ class Listener {
     body.addEventListener("click", (e) => this.handleBodyClick(e))
   }
 
+  // PREVENTS DEFAULT ACTION ON ALL BODY CLICKS 
+  // calls sub-functions based on html class of event target, 
   static handleBodyClick(e) {
+    e.preventDefault()
+    switch(e.target.className) {
+      case "login-form":
+        this.handleLoginFormClick(e)
+        break
+    }
+  }
+
+  // handles clicks to elements of login form based on element id
+  static handleLoginFormClick(e) {
     switch(e.target.id) {
       case "login-form-submit":
-        e.preventDefault()
         Auth.submitLoginForm()
         break
     }
