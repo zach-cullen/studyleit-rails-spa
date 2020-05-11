@@ -1,5 +1,6 @@
 class Api::V1::SessionsController < ApplicationController
-  def new
+  def create
+    binding.pry
     # handles route post /login
     # validate login credentials then add to session cookie for use by helper methods in ApplicationController
   end
