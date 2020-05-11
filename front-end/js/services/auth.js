@@ -18,7 +18,7 @@ class Auth {
     // check for user input before sending (weak validation)
     if (email && password) {
       // use Api service to post userinfo to api and handle promise
-      API.post("/sessions", userInfo)
+      API.post("/login", userInfo)
     }
     else {
       alert("Email and password required for login.")
