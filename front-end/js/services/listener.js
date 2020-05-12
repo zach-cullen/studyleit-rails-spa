@@ -15,6 +15,9 @@ class Listener {
       case "login-form":
         this.handleLoginFormClick(e)
         break
+      case "logout-button":
+        this.handleLogoutButtonClick(e)
+        break
     }
   }
 
@@ -25,5 +28,9 @@ class Listener {
         Auth.submitLoginForm()
         break
     }
+  }
+
+  static handleLogoutButtonClick(e) {
+    Auth.logoutUser()
   }
 }
