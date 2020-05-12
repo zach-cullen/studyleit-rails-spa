@@ -24,6 +24,12 @@ class Api::V1::SessionsController < ApplicationController
     end
   end
 
+  def get_current_user
+    render json: {
+      user: User.find_by(id: session[:user_id])
+    }
+  end
+
   def destroy
     # handles route post /logout
     # delete user info from session cookie
