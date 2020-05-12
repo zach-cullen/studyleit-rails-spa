@@ -5,30 +5,38 @@ class Auth {
   // stores User object representing the logged in user
   static currentUser = {}
 
-  // type checks passed in object and sets currentUser variable
+  //type checks passed in object and sets currentUser variable
   static setCurrentUser(user) {
-    console.log("2. setting current user")
+    console.log("setting current user...")
     if (user instanceof User) {
       this.currentUser = user
     }
-    DOM.renderMainContainer()
+  }
+
+  static clearCurrentUser() {
+    this.currentUser = {}
   }
 
   static getCurrentUser() {
-    console.log("1. getting current user")
-    API.get("/get_current_user")
-      .then(json => this.setCurrentUser(new User(json.user)))
+    console.log("Asking API for current user")
+    return API.get("/get_current_user")
+      .then(json => {
+        json.logged_in ? this.setCurrentUser(new User(json.user)) : this.clearCurrentUser()
+      })
+      // .then(json => this.setCurrentUser(new User(json.user)))
   }
 
   // Auth.isSignedIn returns true if currentUser is set to a user object
   static get isSignedIn() {
-    return this.currentUser instanceof User 
+    const authorized  = this.currentUser instanceof User 
+    console.log(`checking if signed in... ${authorized}`)
+    return authorized
   }
-
 
   // pulls information from document log in form and sends post request to api login route
   // triggers handleLoginResponse
   static submitLoginForm() {
+    console.log("submitting login form...")
     // get user input data
     const email = document.getElementById("login-form-input-email").value
     const password = document.getElementById("login-form-input-password").value
@@ -66,6 +74,16 @@ class Auth {
         break
     }
   }
+
+  // called on logout click
+  static logoutUser() {
+    console.log("logging out user")
+    API.post("/logout")
+      .then(resp => console.log(resp))
+      .then(this.clearCurrentUser())
+      .then(DOM.renderMainContainer)
+  }
+
 
   // provides html string that can be used to add html form to the dom
   static get viewLoginForm() {
