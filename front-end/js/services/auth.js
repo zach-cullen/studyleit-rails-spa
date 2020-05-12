@@ -2,6 +2,24 @@
 // communicates to server about session cookie
 class Auth {
 
+  // stores User object representing the logged in user
+  static currentUser = {}
+
+  // type checks passed in object and sets currentUser variable
+  static setCurrentUser(user) {
+    if (user instanceof User) {
+      this.currentUser = user
+    }
+  }
+
+  // Auth.isSignedIn returns true if currentUser is set to a user object
+  static get isSignedIn() {
+    return this.currentUser instanceof User 
+  }
+
+
+  // pulls information from document log in form and sends post request to api login route
+  // triggers handleLoginResponse
   static submitLoginForm() {
     // get user input data
     const email = document.getElementById("login-form-input-email").value
@@ -19,9 +37,24 @@ class Auth {
     if (email && password) {
       // use Api service to post userinfo to api and handle promise
       API.post("/login", userInfo)
+        .then(json => this.handleLoginResponse(json))
     }
     else {
       alert("Email and password required for login.")
+    }
+  }
+
+  // receives a json string and checks for logged_in status
+  // triggers setUser and rerenders page
+  static handleLoginResponse(json) {
+    switch(json.logged_in) { 
+      case true:
+        this.setCurrentUser(new User(json.user))
+        // rerender
+        break
+      case false:
+        alert(json["error"])
+        break
     }
   }
 
