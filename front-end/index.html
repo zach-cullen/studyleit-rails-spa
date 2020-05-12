@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/base.css">
+  <link rel="stylesheet" href="stylesheets/grid.css">
   <script type="text/javascript" src="js/models/user.js"></script>
   <script type="text/javascript" src="js/services/DOM.js"></script>
   <script type="text/javascript" src="js/services/auth.js"></script>
@@ -12,11 +14,23 @@
   <title>Studyleit FlashCards</title>
 </head>
 <body>
-  <h1>Welcome to the App!</h1>
-  <div id="main" class="container">
-    
+  <div id="nav-outer">
+    <nav class="container">
+      <div id="nav-logo"></div>
+      <div id="nav-buttons">
+        <div class="nav-button" id="logout-button">Log out</div>
+      </div>
+    </nav>
   </div>
-  <br>
-  <button class="logout-button">LOGOUT</button>
+
+  <div id="main-outer">
+    <div id="main" class="container">
+  
+    </div>
+  </div>
+
+  <footer class="container">
+
+  </footer>
 </body>
 </html>
