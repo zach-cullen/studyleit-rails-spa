@@ -15,8 +15,8 @@ class Listener {
       case "login-form":
         this.handleLoginFormClick(e)
         break
-      case "logout-button":
-        this.handleLogoutButtonClick(e)
+      case "nav-button":
+        this.handleNavButtonClick(e)
         break
     }
   }
@@ -26,6 +26,14 @@ class Listener {
     switch(e.target.id) {
       case "login-form-submit":
         Auth.submitLoginForm()
+        break
+    }
+  }
+
+  static handleNavButtonClick(e) {
+    switch(e.target.id) {
+      case "logout-button":
+        this.handleLogoutButtonClick(e)
         break
     }
   }
