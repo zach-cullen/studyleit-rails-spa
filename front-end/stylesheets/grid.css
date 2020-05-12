@@ -23,7 +23,7 @@ nav {
   /* background-color: red; */
   grid-area: logo;
   width: 3rem;
-  background-image: url("../images/studioleit-logo-icon.svg");
+  background-image: url("../assets/images/studioleit-logo-icon.svg");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;

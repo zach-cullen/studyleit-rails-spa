@@ -5,25 +5,25 @@
 
 @font-face {
   font-family: 'calibre';
-  src: url("../fonts/Calibre-Regular.ttf");
+  src: url("../assets/fonts/Calibre-Regular.ttf");
   font-weight: 400;
 } 
 
 @font-face {
   font-family: 'calibre';
-  src: url("../fonts/Calibre-Medium.ttf");
+  src: url("../assets/fonts/Calibre-Medium.ttf");
   font-weight: 500;
 } 
 
 @font-face {
   font-family: 'calibre';
-  src: url("../fonts/Calibre-Semibold.ttf");
+  src: url("../assets/fonts/Calibre-Semibold.ttf");
   font-weight: 600;
 } 
 
 @font-face {
   font-family: 'calibre';
-  src: url("../fonts/Calibre-Bold.ttf");
+  src: url("../assets/fonts/Calibre-Bold.ttf");
   font-weight: 700;
 } 
 
