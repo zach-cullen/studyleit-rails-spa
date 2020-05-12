@@ -17,7 +17,10 @@ class Api::V1::SessionsController < ApplicationController
       }
     else 
       #return error object
-      render json: { status: 401 }
+      render json: { 
+        logged_in: false,
+        error: "Invalid credentials" 
+      }
     end
   end
 
