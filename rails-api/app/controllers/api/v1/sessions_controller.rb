@@ -7,7 +7,7 @@ class Api::V1::SessionsController < ApplicationController
       #create new session on rails side
       session[:user_id] = user.id
       render json: {
-        current_user: user.as_json(except: [:password_digest, :created_at, :updated_at]),
+        user: user.as_json(except: [:password_digest, :created_at, :updated_at]),
         logged_in: true
       }
       #send credentials to JavaScript
