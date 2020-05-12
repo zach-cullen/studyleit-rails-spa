@@ -9,7 +9,6 @@ class Api::V1::SessionsController < ApplicationController
 
     if user
       #create new session on rails side
-      binding.pry
       session[:user_id] = user.id
       #send json response with user data
       render json: {
