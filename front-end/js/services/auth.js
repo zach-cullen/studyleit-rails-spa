@@ -7,9 +7,17 @@ class Auth {
 
   // type checks passed in object and sets currentUser variable
   static setCurrentUser(user) {
+    console.log("2. setting current user")
     if (user instanceof User) {
       this.currentUser = user
     }
+    DOM.renderMainContainer()
+  }
+
+  static getCurrentUser() {
+    console.log("1. getting current user")
+    API.get("/get_current_user")
+      .then(json => this.setCurrentUser(new User(json.user)))
   }
 
   // Auth.isSignedIn returns true if currentUser is set to a user object
