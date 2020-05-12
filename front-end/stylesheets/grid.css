@@ -1,0 +1,57 @@
+#nav-outer {
+  background-color: #FAEED0;
+}
+
+#main-outer {
+  background-color: #FCFCFC; 
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+nav {
+  /* background-color: purple; */
+  height: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "logo buttons"
+}
+
+#nav-logo {
+  /* background-color: red; */
+  grid-area: logo;
+  width: 3rem;
+  background-image: url("../images/studioleit-logo-icon.svg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#nav-buttons {
+  grid-area: buttons;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-button {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: auto 0px;
+  width: 4rem;
+  height: 2rem;
+  line-height: 2.2rem;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+}
+
+#main {
+  /* background-color: blue; */
+  height: 400px;
+}
+
