@@ -51,6 +51,7 @@ class Auth {
       case true:
         this.setCurrentUser(new User(json.user))
         // rerender
+        DOM.renderMainContainer()
         break
       case false:
         alert(json["error"])
