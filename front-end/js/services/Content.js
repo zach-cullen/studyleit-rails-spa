@@ -3,6 +3,12 @@
 
 class Content {
 
+  // invoked to clear all user content in memory
+  static clearUserContent() {
+    allDecks = []
+  }
+
+  // must be cleared at logout
   static allDecks = []
 
   // calls API get request for decks pertaining to user currently logged in
