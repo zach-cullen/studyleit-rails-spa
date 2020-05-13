@@ -12,7 +12,8 @@ class Listener {
   static handleBodyClick(e) {
     e.preventDefault()
     switch(e.target.className) {
-      case "login-form":
+      case "form-submit":
+        console.log("clicked on form!")
         this.handleLoginFormClick(e)
         break
       case "nav-button":
