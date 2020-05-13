@@ -1,7 +1,8 @@
-class DecksController < ApplicationController
+class Api::V1::DecksController < ApplicationController
   
   def index
-
+    decks = Deck.all
+    render json: decks, except: [:created_at, :updated_at]
   end 
 
   def show
