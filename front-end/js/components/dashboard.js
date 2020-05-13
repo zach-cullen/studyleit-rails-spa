@@ -5,7 +5,9 @@ class Dashboard {
     return `
     <div class="dashboard" id="dash-outer">
       <div class="dashboard" id="dash-decks"></div>
-      <div class="dashboard" id="dash-sidebar"></div>
+      <div class="dashboard" id="dash-sidebar">
+        ${Forms.viewNewDeckForm}
+      </div>
    </div>`
   }
 
