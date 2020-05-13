@@ -29,7 +29,7 @@ class Auth {
           Auth.setCurrentUser(new User(json.user))
           Content.getUserDecks()
         } else {
-          Auth.clearCurrentUser()
+          Auth.clearnDataOnLogout()
         }
       })
   }
@@ -87,8 +87,14 @@ class Auth {
     console.log("logging out user")
     API.post("/logout")
       .then(resp => console.log(resp))
-      .then(this.clearCurrentUser())
+      .then(Auth.clearDataOnLogout())
       .then(DOM.renderMainContainer)
+  }
+
+  static clearDataOnLogout() {
+    // clears currentUser and cached content
+    Auth.clearCurrentUser()
+    Content.clearUserContent()
   }
 
 }
