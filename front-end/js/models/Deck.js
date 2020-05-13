@@ -5,10 +5,9 @@ class Deck {
     this.user_id = attributes.user_id
   }
 
-  save(deck) {
-    //type check, then add to content collection
-    if (deck instanceof Deck) {
-      Content.allDecks.push(deck)
-    }
+  // adds instance of Deck to collection for memory persistence in Content class
+  save() {
+    // must be called with method invocation or this will be undefined
+    Content.allDecks.push(this)
   }
 }
