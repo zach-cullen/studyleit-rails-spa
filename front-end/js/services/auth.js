@@ -17,13 +17,21 @@ class Auth {
     this.currentUser = {}
   }
 
+  // asks api to validate user is logged in using session
+  // if valid, sets current user using json response
+  // after user is set, loads user deck
+  // returns promise
   static getCurrentUser() {
     console.log("Asking API for current user")
     return API.get("/get_current_user")
       .then(json => {
-        json.logged_in ? this.setCurrentUser(new User(json.user)) : this.clearCurrentUser()
+        if (json.logged_in) {
+          Auth.setCurrentUser(new User(json.user))
+          Content.getUserDecks()
+        } else {
+          Auth.clearCurrentUser()
+        }
       })
-      // .then(json => this.setCurrentUser(new User(json.user)))
   }
 
   // Auth.isSignedIn returns true if currentUser is set to a user object
@@ -54,8 +62,7 @@ class Auth {
       // use Api service to post userinfo to api and handle promise
       API.post("/login", userInfo)
         .then(json => this.handleLoginResponse(json))
-    }
-    else {
+    } else {
       alert("Email and password required for login.")
     }
   }
