@@ -16,6 +16,14 @@ class Content {
   static getUserDecks() {
     console.log("loading CONTENT: user decks...")
     return API.get(`/users/${Auth.currentUser.id}/decks`)
-      .then(json => console.log(json))
+      .then(json => this.loadUserDecks(json))
+  }
+
+  // receives json string and instantiates Deck objects, and saves them in Content store
+  static loadUserDecks(json) {
+    json.forEach(deckData => {
+      const deck = new Deck(deckData)
+      deck.save()
+    })
   }
 }

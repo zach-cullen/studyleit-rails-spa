@@ -9,5 +9,6 @@ class Deck {
   save() {
     // must be called with method invocation or this will be undefined
     Content.allDecks.push(this)
+    console.log(`just saved ${this.title}`)
   }
 }
