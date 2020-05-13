@@ -1,6 +1,5 @@
 #dash-outer {
   width: 100%;
-  background-color: purple;
   display: grid;
   grid-template-columns: 8fr 4fr;
   grid-column-gap: 1.5rem;
@@ -15,5 +14,4 @@
 #dash-sidebar {
   height: 18rem;
   grid-area: "side";
-  background-color: pink;
 }
