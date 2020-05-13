@@ -8,8 +8,6 @@ class DOM {
     const main = document.getElementById("main")
     if (Auth.isSignedIn) {
       // render dashboard frame & forms
-      // load decks
-      // render decks
       main.innerHTML = Dashboard.viewDash
     }
     else {
