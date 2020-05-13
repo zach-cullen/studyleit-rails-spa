@@ -13,7 +13,7 @@ class DOM {
       main.innerHTML = Dashboard.viewDash
     }
     else {
-      main.innerHTML = Auth.viewLoginForm
+      main.innerHTML = Forms.viewLoginForm
     }
   }
 }
