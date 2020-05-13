@@ -13,11 +13,13 @@ class Listener {
     e.preventDefault()
     switch(e.target.className) {
       case "form-submit":
-        console.log("clicked on form!")
         this.handleLoginFormClick(e)
         break
       case "nav-button":
         this.handleNavButtonClick(e)
+        break
+      case "dash-deck-title":
+        console.log("clicked on dash deck!")
         break
     }
   }
@@ -27,6 +29,9 @@ class Listener {
     switch(e.target.id) {
       case "login-form-submit":
         Auth.submitLoginForm()
+        break
+      case "new-deck-form-submit":
+        console.log("NEW DECK BUTTON!")
         break
     }
   }
