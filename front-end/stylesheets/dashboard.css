@@ -8,10 +8,22 @@
 
 #dash-decks {
   grid-area: "decks";
-  background-color: blue;
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr
 }
 
 #dash-sidebar {
   height: 18rem;
   grid-area: "side";
+}
+
+.dash-deck {
+  height: 10rem;
+  background-color: white;
+  box-sizing: border-box;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
 }
