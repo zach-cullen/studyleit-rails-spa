@@ -88,11 +88,14 @@ class Auth {
   // provides html string that can be used to add html form to the dom
   static get viewLoginForm() {
     return `
-    <form class="login-form" id="login-form" action="#" method="post">
-      <input class="login-form" id="login-form-input-email" type="text" name="email" value="" placeholder="email">
-      <input class="login-form" id="login-form-input-password" type="password" name="password" value="" placeholder="password">
-      <input class="login-form" id="login-form-submit" type="submit" value="Log In">
-    </form>
+    <div class="form-wrapper">
+      <div class="form-header"><h4>Log In</h4></div>
+      <form class="login-form" id="login-form" action="#" method="post">
+        <input class="login-form text-input" id="login-form-input-email" type="text" name="email" value="" placeholder="email"><br>
+        <input class="login-form text-input" id="login-form-input-password" type="password" name="password" value="" placeholder="password"><br>
+        <input class="login-form" id="login-form-submit" type="submit">
+      </form>
+    </div>
     `
   }
 }
