@@ -1,6 +1,7 @@
 // provides html strings for viewing specific forms
 
 class Forms {
+
   // provides html string specifically for login form
   static get viewLoginForm() {
     return `
@@ -14,6 +15,18 @@ class Forms {
     </div>
     `
   }
+  // provides html string specifically for creating a new deck
+  static get viewNewDeckForm() {
+    return `
+    <div class="form-wrapper">
+      <div class="form-header"><h4>+ New Deck</h4></div>
+      <form class="form-content" id="new-deck-form" action="#" method="post">
+        <input class="text-input" id="new-deck-form-input-title" type="text" name="title" value="" placeholder="Title"><br>
+        <input class="form-submit" id="new-deck-form-submit" type="submit" value="Save">
+      </form>
+    </div>
+    `
+  }
 
-  
+
 }
