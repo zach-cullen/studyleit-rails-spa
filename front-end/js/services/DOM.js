@@ -7,7 +7,10 @@ class DOM {
     console.log("RENDER main container")
     const main = document.getElementById("main")
     if (Auth.isSignedIn) {
-      main.innerHTML = `<h3>Logged in with ${Auth.currentUser.email}</h3>`
+      // render dashboard frame & forms
+      // load decks
+      // render decks
+      main.innerHTML = Dashboard.viewDash
     }
     else {
       main.innerHTML = Auth.viewLoginForm
