@@ -26,10 +26,10 @@ class Auth {
     return API.get("/get_current_user")
       .then(json => {
         if (json.logged_in) {
-          Auth.setCurrentUser(new User(json.user))
+          this.setCurrentUser(new User(json.user))
           Content.getUserDecks()
         } else {
-          Auth.clearnDataOnLogout()
+          this.clearnDataOnLogout()
         }
       })
   }
@@ -87,13 +87,13 @@ class Auth {
     console.log("logging out user")
     API.post("/logout")
       .then(resp => console.log(resp))
-      .then(Auth.clearDataOnLogout())
+      .then(this.clearDataOnLogout())
       .then(DOM.renderMainContainer)
   }
 
   static clearDataOnLogout() {
     // clears currentUser and cached content
-    Auth.clearCurrentUser()
+    this.clearCurrentUser()
     Content.clearUserContent()
   }
 
