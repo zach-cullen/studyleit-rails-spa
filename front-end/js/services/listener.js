@@ -31,7 +31,8 @@ class Listener {
         Auth.submitLoginForm()
         break
       case "new-deck-form-submit":
-        console.log("NEW DECK BUTTON!")
+        // console.log("NEW DECK BUTTON!")
+        Content.submitNewDeckForm()
         break
     }
   }
