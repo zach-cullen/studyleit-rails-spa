@@ -1,4 +1,4 @@
-// Responsible for requesting information related to user-created content like decks and cards
+// Responsible for sending and requesting information related to user-created content like decks and cards
 // Stores all content while user is logged in for maintaining state
 
 class Content {
@@ -29,5 +29,24 @@ class Content {
       const deck = new Deck(deckData)
       deck.save()
     })
+  }
+
+  static submitNewDeckForm() {
+    const title = document.getElementById("new-deck-form-input-title").value
+    const deckInfo = {
+      deck: {
+        title
+      }
+    }
+
+    if (!!title) {
+      console.log("Submitting deck...")
+
+      API.post(`/users/${Auth.currentUser.id}/decks`, deckInfo)
+        .then(json => console.log(json))
+
+    } else {
+      alert("Please enter a title for your deck.")
+    }
   }
 }
