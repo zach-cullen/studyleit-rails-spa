@@ -52,6 +52,7 @@ nav {
 
 #main {
   /* background-color: blue; */
-  height: 400px;
+  padding: 2rem;
+  min-height: 20rem;
 }
 
