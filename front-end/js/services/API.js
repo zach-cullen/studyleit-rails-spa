@@ -9,6 +9,7 @@ class API {
   }
   static baseURL = "http://localhost:3000/api/v1"
 
+  // sends body object to url and returns a promise parsed to json string
   static post(url, body) {
     return fetch(this.baseURL + url, {
       method: "POST",
