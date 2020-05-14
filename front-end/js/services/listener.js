@@ -45,14 +45,16 @@ class Listener {
   static handleNavButtonClick(e) {
     switch(e.target.id) {
       case "logout-button":
-        this.handleLogoutButtonClick(e)
+        Auth.logoutUser()
+        break
+      case "dashboard-button":
+        State.currentView.view = "dashboard"
+        DOM.renderMainContainer()
         break
     }
   }
 
-  static handleLogoutButtonClick(e) {
-    Auth.logoutUser()
-  }
+
 
   // gets value of deck and calls a Content action for that deck
   static handleDashDeckTabClick(e) {
