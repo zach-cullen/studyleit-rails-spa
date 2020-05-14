@@ -12,11 +12,13 @@ class Api::V1::DecksController < ApplicationController
     @deck = @user.decks.build(deck_params)
 
     if @deck.save
-      render json: @deck, except: [:created_at, :updated_at]
+      render json: {
+        deck: @deck, except: [:created_at, :updated_at]
+    }
     else 
       render json: { errors: @deck.errors.full_messages }
     end
-    
+
   end
 
   def destroy
