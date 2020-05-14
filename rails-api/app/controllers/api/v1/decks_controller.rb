@@ -5,7 +5,16 @@ class Api::V1::DecksController < ApplicationController
 
   def index
     @decks = @user.decks
-    render json: @decks, except: [:created_at, :updated_at]
+    render json: @decks.to_json(
+      include: {
+        cards: {
+          only: [
+          :deck_id, 
+          :question, 
+          :answer]
+        }
+      }, except: [:created_at, :updated_at]
+    )
   end 
 
   def create
