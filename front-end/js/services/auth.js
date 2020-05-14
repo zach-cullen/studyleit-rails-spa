@@ -18,33 +18,31 @@ class Auth {
   }
 
   // asks api to validate user is logged in using session
-  // if valid, sets current user using json response
-  // after user is set, loads user deck
-  // returns promise
+  // calls response handler when API promise resolves
   static getCurrentUser() {
-    console.log("Asking API for current user")
     return API.get("/get_current_user")
-      .then(json => {
-        if (json.logged_in) {
-          this.setCurrentUser(new User(json.user))
-          Content.getUserDecks()
-        } else {
-          this.clearnDataOnLogout()
-        }
-      })
+      .then(json => this.handleCurrentUserResponse(json))
   }
 
-  // Auth.isSignedIn returns true if currentUser is set to a user object
+  // reads json response for user login data and calls functions
+  static handleCurrentUserResponse(json) {
+    if (json.logged_in) {
+      this.setCurrentUser(new User(json.user))
+      Content.getUserDecks()
+    } else {
+      this.clearDataOnLogout()
+      DOM.renderMainContainer()
+    }
+  }
+
+  // Auth.isSignedIn returns true if currentUser is set to a User object
   static get isSignedIn() {
-    const authorized  = this.currentUser instanceof User 
-    console.log(`checking if signed in... ${authorized}`)
-    return authorized
+    return this.currentUser instanceof User 
   }
 
   // pulls information from document log in form and sends post request to api login route
   // triggers handleLoginResponse
   static submitLoginForm() {
-    console.log("submitting login form...")
     // get user input data
     const email = document.getElementById("login-form-input-email").value
     const password = document.getElementById("login-form-input-password").value
@@ -60,35 +58,35 @@ class Auth {
     // check for user input before sending (weak validation)
     if (email && password) {
       // use Api service to post userinfo to api and handle promise
-      API.post("/login", userInfo)
-        .then(json => this.handleLoginResponse(json))
+      return API.post("/login", userInfo)
+        .then(json => {
+          // expect Rails api to provide logged_in: true or false 
+          if (json.logged_in) {
+            // set js current user from json response of user data
+            this.setCurrentUser(new User(json.user))
+            // second api request for user data
+            Content.getUserDecks()
+          } else {
+            // logged_in false will return more info in error message
+            alert(json.error)
+          }
+        })
     } else {
+      // notify user that they need to fill in form fields
       alert("Email and password required for login.")
     }
   }
 
-  // receives a json string and checks for logged_in status
-  // triggers setUser and rerenders page
-  static handleLoginResponse(json) {
-    switch(json.logged_in) { 
-      case true:
-        this.setCurrentUser(new User(json.user))
-        // rerender
-        DOM.renderMainContainer()
-        break
-      case false:
-        alert(json["error"])
-        break
-    }
-  }
 
-  // called on logout click
+  // notify api of user logout to reset session
+  // clear current user and reload after response
   static logoutUser() {
     console.log("logging out user")
     API.post("/logout")
-      .then(resp => console.log(resp))
-      .then(this.clearDataOnLogout())
-      .then(DOM.renderMainContainer)
+      .then(() => {
+        this.clearDataOnLogout()
+        DOM.renderMainContainer()
+      })
   }
 
   static clearDataOnLogout() {
