@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :cards
   namespace :api do 
     namespace :v1 do
       resources :users do 
-        resources :decks, only: [:index, :create, :destroy]
+        resources :decks, only: [:index, :create, :destroy] do
+          resources :cards, only: [:create, :destroy]
+        end
       end
       post "/login", to: "sessions#create"
       post "/logout", to: "sessions#destroy"
