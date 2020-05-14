@@ -54,7 +54,6 @@ class Content {
   }
 
   static handleNewDeckResponse(json) {
-    console.log("handling json..")
     if (json.deck) {
       const deck = new Deck(json.deck)
       deck.save()
@@ -66,7 +65,6 @@ class Content {
 
   // requests delete deck on API side, calls handler function for response
   static requestDeleteDeck(deck_id) {
-    console.log(`requesting delete of deck ${deck_id}...`)
     API.delete(`/users/${Auth.currentUser.id}/decks/${deck_id}`)
       .then(json => this.handleDeleteDeckResponse(json))
   }
