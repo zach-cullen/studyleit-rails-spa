@@ -17,7 +17,13 @@ class Dashboard {
     return `
     <div class="dash-deck" id="dash-deck-${deck.id}">
       <div class="dash-deck-title">${deck.title}</div>
-      <div class="dash-deck-tabs"></div>
+      <div class="dash-deck-tabs">
+        <div class="dash-deck-tabs-container">
+          <button class="dash-deck-delete" value="${deck.id}"></button>
+          <button class="dash-deck-edit" value="${deck.id}"></button>
+          <button class="dash-deck-play" value="${deck.id}"></button>
+        </div>
+      </div>
     </div>
     `
   }

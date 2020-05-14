@@ -31,13 +31,50 @@
 .dash-deck-title {
   font-weight: 700;
   font-size: 1.2rem;
-  height: 7.5rem;
+  height: 65%;
   line-height: 7.5rem;
   text-align: center;
 }
 
 .dash-deck-tabs {
-  height: 2.5rem;
-  width: 100%;
-  border-top: solid 1px #e0e0e0;
+  height: 35%;
+}
+
+.dash-deck-tabs-container {
+  margin: 0px auto;
+  /* multiple of total width of child buttons */
+  width: 7.5rem;
+}
+
+.dash-deck-tabs button {
+  border: none;
+  display: block;
+  float: left;
+  margin: 1rem 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  opacity: 0.3;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.dash-deck-tabs button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+
+.dash-deck-delete {
+  background-image: url("../assets/images/material-icons/delete_sweep_30px.svg");
+
+}
+
+.dash-deck-edit {
+  background-image: url("../assets/images/material-icons/mode_30px.svg");
+
+}
+
+.dash-deck-play {
+  background-image: url("../assets/images/material-icons/play_arrow_30px.svg");
 }
