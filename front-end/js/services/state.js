@@ -8,8 +8,26 @@ class State {
     id: false
   } 
 
+  static resetCurrentView() {
+    this.currentView = {
+      view: false,
+      id: false
+    }
+  }
+
   static renderCurrentView() {
-    
+    switch(this.currentView.view) {
+      case"deck-editor":
+        return Editor.viewDeckEditor()
+        break
+      case("dashboard"):
+        return Dashboard.viewDash
+        break
+      default:
+        // by default will always show either login or dashboard as first page on refresh
+        return Auth.isSignedIn ? Dashboard.viewDash : Forms.viewLoginForm
+        break
+    }
   }
 
 }
