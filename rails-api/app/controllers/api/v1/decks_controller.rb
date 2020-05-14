@@ -22,12 +22,18 @@ class Api::V1::DecksController < ApplicationController
   end
 
   def destroy
+    # if deck does not belong to user, will return nil and delete will fail
     @deck = @user.decks.find_by(id: params[:id])
     if @deck
       @deck.destroy 
       render json: {
         deleted: true,
         deck: @deck, except: [:created_at, :updated_at]
+      }
+    else 
+      render json: {
+        deleted: false,
+        errors: "You must log in to perform this action"
       }
     end
   end
