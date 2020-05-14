@@ -56,4 +56,8 @@ class Content {
     }
   }
 
+  static requestDeleteDeck(deck_id) {
+    console.log(`requesting delete of deck ${deck_id}...`)
+  }
+
 }

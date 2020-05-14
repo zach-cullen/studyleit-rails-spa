@@ -59,7 +59,7 @@ class Listener {
     const deck_id = e.target.value
     switch(e.target.className) {
      case "dash-deck-delete":
-        console.log(`clicked DELETE value: ${deck_id}`)
+        Content.requestDeleteDeck(deck_id)
         break
       case "dash-deck-edit":
         console.log(`clicked EDIT value: ${deck_id}`)
