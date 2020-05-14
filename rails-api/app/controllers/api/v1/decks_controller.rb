@@ -7,12 +7,12 @@ class Api::V1::DecksController < ApplicationController
     @decks = @user.decks
     render json: @decks.to_json(
       include: {
-        cards: {
-          only: [
-          :deck_id, 
-          :question, 
-          :answer]
-        }
+        cards: { only: [
+            :id,
+            :deck_id, 
+            :question, 
+            :answer
+        ]}
       }, except: [:created_at, :updated_at]
     )
   end 
