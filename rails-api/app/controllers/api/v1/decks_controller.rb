@@ -22,7 +22,7 @@ class Api::V1::DecksController < ApplicationController
   end
 
   def destroy
-
+    binding.pry
   end
 
   #protect deck actions by validating that user in params is same as logged in user
