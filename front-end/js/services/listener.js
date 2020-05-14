@@ -21,6 +21,11 @@ class Listener {
       case "dash-deck-title":
         console.log("clicked on dash deck!")
         break
+      case "dash-deck-delete":
+      case "dash-deck-edit":
+      case "dash-deck-play":
+        console.log("clicked on a deck tab")
+        break
     }
   }
 
