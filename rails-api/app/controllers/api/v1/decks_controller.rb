@@ -22,7 +22,14 @@ class Api::V1::DecksController < ApplicationController
   end
 
   def destroy
-    binding.pry
+    @deck = @user.decks.find_by(id: params[:id])
+    if @deck
+      @deck.destroy 
+      render json: {
+        deleted: true,
+        deck: @deck, except: [:created_at, :updated_at]
+      }
+    end
   end
 
   #protect deck actions by validating that user in params is same as logged in user
