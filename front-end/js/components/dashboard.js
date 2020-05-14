@@ -24,7 +24,6 @@ class Dashboard {
 
   //returns html string of dash deck views generated from collection of decks saved in content store
   static get viewAllDashDecks() {
-    console.log("Dashboard creating views for all decks...")
     return Content.allDecks.map((deck) => this.viewDashDeck(deck)).join("")
   }
   
