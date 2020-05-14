@@ -26,10 +26,13 @@ class Content {
   }
 
   // receives json string and instantiates Deck objects, and saves them in Content store
+  // creates and saves cards to deck object
   // after decks loaded, triggers re-render of DOM
   static loadUserDecks(json) {
     json.forEach(deckData => {
       const deck = new Deck(deckData)
+      // create cards and add to deck
+      deck.saveCardsFromJson(deckData.cards)
       deck.save()
     })
     DOM.renderMainContainer()
