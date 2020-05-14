@@ -11,6 +11,11 @@ class Content {
   // must be cleared at logout
   static allDecks = []
 
+  // sets allDecks to new array without specific deck by id
+  static removeDeletedDeck(id) {
+    this.allDecks = this.allDecks.filter((d) => d.id != id)
+  }
+
   // calls API with request for decks pertaining to user currently logged in
   // returns a promise that resolves with json collection of user_decks
   static getUserDecks() {
@@ -56,10 +61,21 @@ class Content {
     }
   }
 
+  // requests delete deck on API side, calls handler function for response
   static requestDeleteDeck(deck_id) {
     console.log(`requesting delete of deck ${deck_id}...`)
     API.delete(`/users/${Auth.currentUser.id}/decks/${deck_id}`)
-      .then(json => console.log(json))
+      .then(json => this.handleDeleteDeckResponse(json))
+  }
+
+  // if receives success from api, triggers delete on client side and rerender
+  static handleDeleteDeckResponse(json) {
+    if (json.deleted) {
+      this.removeDeletedDeck(json.deck.id)
+      DOM.renderMainContainer()
+    } else {
+      alert(json.errors)
+    }
   }
 
 }
