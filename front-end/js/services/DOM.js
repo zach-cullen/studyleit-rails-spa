@@ -1,16 +1,14 @@
-// makes changes to the DOM
-
+// Responsible for all direct changes to the DOM
 class DOM {
 
-  // be careful with THIS because it will get lost in chained method
   static renderMainContainer() {
-    console.log("RENDER main container")
     const main = document.getElementById("main")
     if (Auth.isSignedIn) {
-      // render dashboard frame & forms
+      // render dashboard 
       main.innerHTML = Dashboard.viewDash
     }
     else {
+      // render login
       main.innerHTML = Forms.viewLoginForm
     }
   }
