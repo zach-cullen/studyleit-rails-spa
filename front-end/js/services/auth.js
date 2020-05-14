@@ -7,7 +7,6 @@ class Auth {
 
   //type checks passed in object and sets currentUser variable
   static setCurrentUser(user) {
-    console.log("setting current user...")
     if (user instanceof User) {
       this.currentUser = user
     }
