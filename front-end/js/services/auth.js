@@ -80,7 +80,6 @@ class Auth {
   // notify api of user logout to reset session
   // clear current user and reload after response
   static logoutUser() {
-    console.log("logging out user")
     API.post("/logout")
       .then(() => {
         this.clearDataOnLogout()
