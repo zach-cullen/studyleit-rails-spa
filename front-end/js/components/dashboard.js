@@ -22,9 +22,9 @@ class Dashboard {
     `
   }
 
-  //returns html string of dash deck views generated from collection of decks saved in content store
+  //returns html string of dash deck views generated from collection of decks saved in content store sorted by newest first
   static get viewAllDashDecks() {
-    return Content.allDecks.map((deck) => this.viewDashDeck(deck)).join("")
+    return Content.allDecks.sort((a, b) => b.id - a.id ).map((deck) => this.viewDashDeck(deck)).join("")
   }
   
 }
