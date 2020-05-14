@@ -48,6 +48,7 @@
 
 .dash-deck-tabs button {
   border: none;
+  outline: none;
   display: block;
   float: left;
   margin: 1rem 0.5rem;
