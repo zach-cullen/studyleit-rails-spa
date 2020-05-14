@@ -24,7 +24,7 @@ class Listener {
       case "dash-deck-delete":
       case "dash-deck-edit":
       case "dash-deck-play":
-        console.log("clicked on a deck tab")
+        this.handleDashDeckTabClick(e)
         break
     }
   }
@@ -53,4 +53,21 @@ class Listener {
   static handleLogoutButtonClick(e) {
     Auth.logoutUser()
   }
+
+  // gets value of deck and calls a Content action for that deck
+  static handleDashDeckTabClick(e) {
+    const deck_id = e.target.value
+    switch(e.target.className) {
+     case "dash-deck-delete":
+        console.log(`clicked DELETE value: ${deck_id}`)
+        break
+      case "dash-deck-edit":
+        console.log(`clicked EDIT value: ${deck_id}`)
+        break
+      case "dash-deck-play":
+        console.log(`clicked PLAY value: ${deck_id}`)
+        break
+    }
+  }
+
 }
