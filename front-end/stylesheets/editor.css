@@ -34,3 +34,13 @@
   grid-area: "answer";
   padding: 1rem;
 }
+
+#new-card-form-input-question {
+  resize: none;
+  height: 2rem;
+}
+
+#new-card-form-input-answer {
+  resize: none;
+  height: 4rem;
+}
