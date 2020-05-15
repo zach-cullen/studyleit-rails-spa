@@ -20,6 +20,7 @@
   height: 65%;
   line-height: 7.5rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .dash-deck-tabs {

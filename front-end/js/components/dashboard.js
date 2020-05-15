@@ -17,7 +17,7 @@ class Dashboard {
   static viewDashDeck(deck) {
     return `
     <div class="dash-deck" id="dash-deck-${deck.id}">
-      <div class="dash-deck-title">${deck.title}</div>
+      <div class="dash-deck-title" id="${deck.id}">${deck.title}</div>
       <div class="dash-deck-tabs">
         <div class="dash-deck-tabs-container">
           <button class="dash-deck-delete" value="${deck.id}"></button>

@@ -19,7 +19,9 @@ class Listener {
         this.handleNavButtonClick(e)
         break
       case "dash-deck-title":
-        console.log("clicked on dash deck!")
+        const deck_id = e.target.id
+        State.setViewToDeckEditor(deck_id)
+        DOM.renderMainContainer()
         break
       case "dash-deck-delete":
       case "dash-deck-edit":
@@ -68,7 +70,6 @@ class Listener {
       case "dash-deck-edit":
         State.setViewToDeckEditor(deck_id)
         DOM.renderMainContainer()
-        console.log(`clicked EDIT value: ${deck_id}`)
         break
       case "dash-deck-play":
         console.log(`clicked PLAY value: ${deck_id}`)
