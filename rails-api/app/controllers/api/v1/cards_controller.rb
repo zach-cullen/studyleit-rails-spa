@@ -21,7 +21,7 @@ class Api::V1::CardsController < ApplicationController
       @card.destroy 
       render json: {
         deleted: true,
-        deck: @card, except: [:created_at, :updated_at]
+        card: @card, except: [:created_at, :updated_at]
       }
     else 
       render json: {
