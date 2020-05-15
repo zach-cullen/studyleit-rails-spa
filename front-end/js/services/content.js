@@ -113,7 +113,10 @@ class Content {
   }
 
   static requestDeleteCard(card_id) {
-    console.log( `requesting delete card ${card_id}`)
+    //relies on information about the current deck being stored in state since card deletion available from deck edit view
+    const deck_id = State.currentView.id
+    API.delete(`/users/${Auth.currentUser.id}/decks/${deck_id}/cards/${card_id}`)
+      .then(json => console.log(json))
   }
 
 }
