@@ -84,10 +84,9 @@ class Content {
     const question = document.getElementById("new-card-form-input-question").value
     const answer = document.getElementById("new-card-form-input-answer").value
 
-    const cardInfo = { card: { deck_id, question, answer } }
+    const cardInfo = { card: { question, answer } }
 
     if (!!question && !!answer) {
-      console.log(cardInfo)
       API.post(`/users/${Auth.currentUser.id}/decks/${deck_id}/cards`, cardInfo)
       .then(json => {
         this.handleNewCardResponse(json)
