@@ -30,6 +30,7 @@ class Editor {
     return `
       <div class="edit-card">
         <div class="edit-card-tabs">
+          <button class="edit-card-tab" id="edit-card-tab-delete"></button>
         </div>
         <div class="edit-card-question">
           <h4>Question</h4>

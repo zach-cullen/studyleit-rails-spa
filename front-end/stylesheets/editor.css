@@ -25,22 +25,50 @@
 }
 
 .edit-card-tabs {
-  grid-area: "tabs";
+  grid-area: tabs;
   background-color: #E0E0E0;
   box-sizing: border-box;
   background: #F0EEE8;
   border-right: 1px solid #E0E0E0;
+  display: grid;
+  grid-template-rows: 2.2rem 1fr 2.2rem;
+  grid-template-areas:
+  "top"
+  "."
+  "bottom"
+}
+
+.edit-card-tab {
+  border: none;
+  outline: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.5rem auto;
+  opacity: 0.2;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.edit-card-tab:hover {
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+#edit-card-tab-delete {
+  grid-area: top;
+  background-image: url("../assets/images/material-icons/delete_sweep_30px.svg");
 }
 
 .edit-card-question {
-  grid-area: "question";
+  grid-area: question;
   padding: 1rem;
   box-sizing: border-box;
   border-right: 1px solid #E0E0E0;
 }
 
 .edit-card-answer {
-  grid-area: "answer";
+  grid-area: answer;
   padding: 1rem;
 }
 
