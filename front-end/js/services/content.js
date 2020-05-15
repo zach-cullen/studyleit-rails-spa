@@ -98,7 +98,18 @@ class Content {
   }
 
   static handleNewCardResponse(json) {
-    console.log(json)
+    // create a new deck from JSON if successful
+    if (!!json.card) {
+      const card = new Card(json.card)
+      // save card to deck in JS
+      const deck = Content.allDecks.find((d) => d.id == card.deck_id)
+      deck.saveCardToDeck(card)
+      // rerender page (should still be deck editor unless user has performed other actions while API waiting for response)
+      DOM.renderMainContainer()
+    } else {
+      // alert errors if failed
+      console.log(deck)
+    }
   }
 
 }
