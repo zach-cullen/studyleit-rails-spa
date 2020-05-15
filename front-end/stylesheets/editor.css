@@ -15,6 +15,15 @@
   grid-template-areas: "tabs question answer";
 }
 
+.edit-card p {
+  white-space: pre-line;
+  word-break: break-all;
+}
+
+.edit-card h4 {
+  margin-bottom: 0.2rem;
+}
+
 .edit-card-tabs {
   grid-area: "tabs";
   background-color: #E0E0E0;
