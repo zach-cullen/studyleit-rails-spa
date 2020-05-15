@@ -80,7 +80,26 @@ class Content {
   }
 
   static submitNewCardForm() {
-    console.log("Asking to submit deck form!")
+    const deck_id = State.currentView.id
+    const question = document.getElementById("new-card-form-input-question").value
+    const answer = document.getElementById("new-card-form-input-answer").value
+
+    const cardInfo = { card: { deck_id, question, answer } }
+
+    if (!!question && !!answer) {
+      console.log(cardInfo)
+      API.post(`/users/${Auth.currentUser.id}/decks/${deck_id}/cards`, cardInfo)
+      .then(json => {
+        this.handleNewCardResponse(json)
+      })
+
+    } else {
+      alert("Please enter both a question and an answer for your new card.")
+    }
+  }
+
+  static handleNewCardResponse(json) {
+    console.log(json)
   }
 
 }
