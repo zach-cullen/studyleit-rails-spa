@@ -29,12 +29,9 @@ class Listener {
         this.handleDashDeckTabClick(e)
         break
       case "main-title-back":
-        console.log("CLICKED BACK!")
         State.setViewToDashboard()
         DOM.renderMainContainer()
         break
-      default:
-        console.log(e.target)
     }
   }
 
