@@ -72,3 +72,10 @@ nav {
   grid-area: "side";
   height: 18rem;
 }
+
+.main-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
