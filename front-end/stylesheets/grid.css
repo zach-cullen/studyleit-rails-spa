@@ -94,12 +94,18 @@ nav {
 }
 
 .main-title-back {
-  cursor: pointer;
-  height: 1rem;
-  text-align: left;
-  align-self: center;
-  background-color: yellow;
   grid-area: "back";
+  align-self: center;
+  cursor: pointer;
+  height: 1.2rem;
+  line-height: 1.4rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.main-title-back:hover {
+  background-color: #FFDA7C;
 }
 
 .main-title-next {

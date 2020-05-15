@@ -7,7 +7,7 @@ class Editor {
     return `
         <div class="main-title">
           <div class="main-title-back">
-            <h5>< Back to Dash</h5>
+            < Back to Dash
           </div>
           <div class="main-title-header">
             <h1>${deck.title}</h1>
