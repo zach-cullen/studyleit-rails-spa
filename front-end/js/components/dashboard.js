@@ -3,7 +3,9 @@
 class Dashboard {
   static get viewDash() {
     return `
-    <h1 class="main-title">Dashboard</h1>
+    <div class="main-title-dash">
+        <h1>Dashboard</h1>   
+    </div>
     <div class="main-inner" id="dash-outer">
       <div class="main-content" id="dash-decks">
         ${this.viewAllDashDecks}

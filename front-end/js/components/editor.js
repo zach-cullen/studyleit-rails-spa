@@ -2,10 +2,18 @@
 class Editor {
 
   static viewDeckEditor() {
-    // relies on State object to provide id of current deck
+    // relies on State class to provide id of current deck
     const deck = Content.allDecks.find((d) => d.id == State.currentView.id)
     return `
-        <h1 class="main-title">${deck.title}</h1>
+        <div class="main-title">
+          <div class="main-title-back">
+            <h5>< Back to Dash</h5>
+          </div>
+          <div class="main-title-header">
+            <h1>${deck.title}</h1>
+          </div>          
+          <div class="main-title-next"></div>
+        </div>
         <div class="main-inner" id="editor-outer">
           <div class="main-content-area" id="editor-cards">
             ${this.viewAllEditorCards(deck)}
