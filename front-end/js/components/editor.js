@@ -11,7 +11,7 @@ class Editor {
             ${this.viewAllEditorCards(deck)}
           </div>
           <div class="main-sidebar" id="editor-sidebar">
-            ${Forms.viewNewDeckForm}
+            ${Forms.viewNewCardForm}
           </div>
        </div>
     `
