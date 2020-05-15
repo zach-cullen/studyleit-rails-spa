@@ -16,6 +16,15 @@ class Content {
     this.allDecks = this.allDecks.filter((d) => d.id != id)
   }
 
+  static findDeckById(deck_id) {
+    return this.allDecks.find((d) => d.id == deck_id)
+  }
+
+  static removeDeletedCard(card_data) {
+    const deck = this.findDeckById(card_data.deck_id)
+    deck.cards = deck.cards.filter((c) => c.id != card_data.id)
+  }
+
   // calls API with request for decks pertaining to user currently logged in
   // returns a promise that resolves with json collection of user_decks
   static getUserDecks() {
@@ -116,7 +125,16 @@ class Content {
     //relies on information about the current deck being stored in state since card deletion available from deck edit view
     const deck_id = State.currentView.id
     API.delete(`/users/${Auth.currentUser.id}/decks/${deck_id}/cards/${card_id}`)
-      .then(json => console.log(json))
+      .then(json => this.handleDeleteCardResponse(json))
+  }
+
+  static handleDeleteCardResponse(json) {
+    if (json.deleted) {
+      this.removeDeletedCard(json.card)
+      DOM.renderMainContainer()
+    } else {
+      alert(json.errors)
+    }
   }
 
 }
