@@ -16,7 +16,19 @@ class Api::V1::CardsController < ApplicationController
   end
 
   def destroy
-
+    @card = @user.cards.find_by(id: params[:id])
+    if @card
+      @card.destroy 
+      render json: {
+        deleted: true,
+        deck: @card, except: [:created_at, :updated_at]
+      }
+    else 
+      render json: {
+        deleted: false,
+        errors: "You must log in to perform this action"
+      }
+    end
   end
 
   # copy of method in decks controller since card is only accessed as a NESTED resource
