@@ -37,7 +37,7 @@ class Editor {
 
   // generates a collection of card views from an instance of Deck passed as argument
   static viewAllEditorCards(deck) {
-    return deck.cards.map((card) => this.viewEditorCard(card)).join("")
+    return deck.cards.sort((a, b) => b.id - a.id ).map((card) => this.viewEditorCard(card)).join("")
   }
 
 }
