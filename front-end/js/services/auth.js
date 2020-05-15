@@ -91,6 +91,7 @@ class Auth {
     // clears currentUser and cached content
     this.clearCurrentUser()
     Content.clearUserContent()
+    State.resetView()
   }
 
 }
