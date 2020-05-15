@@ -1,3 +1,5 @@
+/* Provides general styles for form class elements, see component styles for specific form styles */
+
 .form-wrapper {
   margin: 0px auto;
   height: min-content;
