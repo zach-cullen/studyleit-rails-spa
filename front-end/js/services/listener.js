@@ -58,10 +58,6 @@ class Listener {
       case "logout-button":
         Auth.logoutUser()
         break
-      case "dashboard-button":
-        State.setViewToDashboard()
-        DOM.renderMainContainer()
-        break
     }
   }
 
