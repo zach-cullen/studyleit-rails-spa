@@ -28,5 +28,21 @@ class Forms {
     `
   }
 
+  // provides html string specifically for creating a new deck
+  static get viewNewCardForm() {
+    return `
+    <div class="form-wrapper">
+      <div class="form-header">+ New Card</div>
+      <form class="form-content" id="new-card-form" action="#" method="post">
+        <textarea class="text-input" id="new-card-form-input-question" type="text" name="question" placeholder="Question"></textarea>
+        <br>
+        <textarea class="text-input" id="new-card-form-input-answer" type="text" name="answer" placeholder="Answer"></textarea>
+        <br>
+        <input class="form-submit" id="new-card-form-submit" type="submit" value="Save">
+      </form>
+    </div>
+    `
+  }
+
 
 }
