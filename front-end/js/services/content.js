@@ -112,4 +112,8 @@ class Content {
     }
   }
 
+  static requestDeleteCard(card_id) {
+    console.log( `requesting delete card ${card_id}`)
+  }
+
 }

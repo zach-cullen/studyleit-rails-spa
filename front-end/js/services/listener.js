@@ -28,6 +28,9 @@ class Listener {
       case "dash-deck-play":
         this.handleDashDeckTabClick(e)
         break
+      case "edit-card-tab":
+        this.handleEditCardTabClick(e)
+        break
       case "main-title-back":
         State.setViewToDashboard()
         DOM.renderMainContainer()
@@ -74,6 +77,15 @@ class Listener {
       case "dash-deck-play":
         console.log(`clicked PLAY value: ${deck_id}`)
         break
+    }
+  }
+
+  static handleEditCardTabClick(e) {
+    switch(e.target.id) {
+      case "edit-card-tab-delete":
+        // send card_id from button value to Content function for Api call
+        Content.requestDeleteCard(e.target.value)
+      break
     }
   }
 
