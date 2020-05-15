@@ -79,4 +79,8 @@ class Content {
     }
   }
 
+  static submitNewCardForm() {
+    console.log("Asking to submit deck form!")
+  }
+
 }
