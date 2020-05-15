@@ -3,11 +3,11 @@
 class Dashboard {
   static get viewDash() {
     return `
-    <div class="dashboard" id="dash-outer">
-      <div class="dashboard" id="dash-decks">
+    <div class="main-inner" id="dash-outer">
+      <div class="main-content" id="dash-decks">
         ${this.viewAllDashDecks}
       </div>
-      <div class="dashboard" id="dash-sidebar">
+      <div class="main-sidebar" id="dash-sidebar">
         ${Forms.viewNewDeckForm}
       </div>
    </div>`

@@ -56,3 +56,19 @@ nav {
   min-height: 20rem;
 }
 
+.main-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  grid-column-gap: 1.5rem; 
+  grid-template-areas: "content side";
+}
+
+.main-content {
+  grid-area: "content";
+}
+
+.main-sidebar {
+  grid-area: "side";
+  height: 18rem;
+}

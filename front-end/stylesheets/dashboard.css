@@ -1,21 +1,7 @@
-#dash-outer {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 8fr 4fr;
-  grid-column-gap: 1.5rem;
-  grid-template-areas: "decks side";
-}
-
 #dash-decks {
-  grid-area: "decks";
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr))
-}
-
-#dash-sidebar {
-  height: 18rem;
-  grid-area: "side";
 }
 
 .dash-deck {
