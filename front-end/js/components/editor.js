@@ -21,8 +21,16 @@ class Editor {
   static viewEditorCard(card) {
     return `
       <div class="edit-card">
-        <h3>${card.question}</h3>
-        <p>${card.answer}</p>
+        <div class="edit-card-tabs">
+        </div>
+        <div class="edit-card-question">
+          <h4>Question</h4>
+          <p>${card.question}</p>
+        </div>
+        <div class="edit-card-answer">
+          <h4>Answer</h4>
+          <p>${card.answer}</p>
+        </div>
       </div>
     `
   }
