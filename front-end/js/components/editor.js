@@ -7,6 +7,7 @@ class Editor {
     return `
         <div class="main-inner" id="editor-outer">
           <div class="main-content-area" id="editor-cards">
+            <h1 class="main-title">${deck.title}</h1>
             ${this.viewAllEditorCards(deck)}
           </div>
           <div class="main-sidebar" id="editor-sidebar">
@@ -19,7 +20,7 @@ class Editor {
   // generates a single card view in deck editor from an instance of Card passed as argument
   static viewEditorCard(card) {
     return `
-      <div class="card-edit-view">
+      <div class="edit-card">
         <h3>${card.question}</h3>
         <p>${card.answer}</p>
       </div>
