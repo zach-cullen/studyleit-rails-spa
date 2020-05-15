@@ -8,7 +8,7 @@ class State {
     id: false
   } 
 
-  static resetCurrentView() {
+  static resetView() {
     this.currentView = {
       view: false,
       id: false
@@ -27,6 +27,20 @@ class State {
         // by default will always show either login or dashboard as first page on refresh
         return Auth.isSignedIn ? Dashboard.viewDash : Forms.viewLoginForm
         break
+    }
+  }
+
+  static setViewToDashboard() {
+    this.currentView = {
+      view: "dashboard",
+      id: false
+    }
+  }
+
+  static setViewToDeckEditor(deck_id) {
+    this.currentView = {
+      view: "deck-editor",
+      id: deck_id
     }
   }
 

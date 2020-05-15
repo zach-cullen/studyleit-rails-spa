@@ -48,7 +48,7 @@ class Listener {
         Auth.logoutUser()
         break
       case "dashboard-button":
-        State.currentView.view = "dashboard"
+        State.setViewToDashboard()
         DOM.renderMainContainer()
         break
     }
@@ -64,7 +64,7 @@ class Listener {
         Content.requestDeleteDeck(deck_id)
         break
       case "dash-deck-edit":
-        State.currentView = { view: "deck-editor", id: deck_id }
+        State.setViewToDeckEditor(deck_id)
         DOM.renderMainContainer()
         console.log(`clicked EDIT value: ${deck_id}`)
         break
