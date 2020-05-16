@@ -16,6 +16,10 @@ class Content {
     this.allDecks = this.allDecks.filter((d) => d.id != id)
   }
 
+  static findDeckFromCurrentView() {
+    return this.findDeckById(State.currentView.id)
+  }
+
   static findDeckById(deck_id) {
     return this.allDecks.find((d) => d.id == deck_id)
   }
