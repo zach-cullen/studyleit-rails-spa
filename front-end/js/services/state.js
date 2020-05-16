@@ -23,6 +23,9 @@ class State {
       case("dashboard"):
         return Dashboard.viewDash
         break
+      case("practice-view"):
+        return PracticeView.viewDeckPractice()
+        break
       default:
         // by default will always show either login or dashboard as first page on refresh
         return Auth.isSignedIn ? Dashboard.viewDash : Forms.viewLoginForm
@@ -40,6 +43,13 @@ class State {
   static setViewToDeckEditor(deck_id) {
     this.currentView = {
       view: "deck-editor",
+      id: deck_id
+    }
+  }
+
+  static setViewToPracticeView(deck_id) {
+    this.currentView = {
+      view: "practice-view",
       id: deck_id
     }
   }

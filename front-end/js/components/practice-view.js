@@ -9,13 +9,13 @@ class PracticeView {
           </div>
           <div class="main-title-header">
             <h1>Practice</h1>
-            <h2>${deck.title}</h2>
+            <h3>${deck.title}</h3>
           </div>          
           <div class="main-title-next"></div>
         </div>
         <div class="main-inner" id="editor-outer">
           <div class="main-content-area" id="editor-cards">
-            ${this.viewAllEditorCards(deck)}
+            ${Editor.viewAllEditorCards(deck)}
           </div>
           <div class="main-sidebar" id="editor-sidebar">
           </div>

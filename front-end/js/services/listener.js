@@ -73,7 +73,8 @@ class Listener {
         DOM.renderMainContainer()
         break
       case "dash-deck-play":
-        console.log(`clicked PLAY value: ${deck_id}`)
+        State.setViewToPracticeView(deck_id)
+        DOM.renderMainContainer()
         break
     }
   }
