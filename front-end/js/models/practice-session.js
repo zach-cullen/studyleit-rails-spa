@@ -7,6 +7,17 @@ class PracticeSession {
     this.shuffler =  PracticeSession.makeShuffler(cardCount)
   }
 
+  // mutates attributes of this Practice Session based on boolean argument recorded when a question score is recorded
+  logScore(correctness) {
+    if (correctness === true) { 
+      this.correctCardsCount++ 
+      this.currentCardIndex++
+    } else if (correctness === false) {
+      this.currentCardIndex++
+    } else {
+      console.log("TYPE ERROR: logScore can only receive booleans as arguments")
+    }
+  }
 
   // returns an array of randomized integers representing indexes in array of cards of cardCount length
   static makeShuffler(cardCount) {
