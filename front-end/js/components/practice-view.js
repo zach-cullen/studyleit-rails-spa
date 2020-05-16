@@ -13,8 +13,8 @@ class PracticeView {
           </div>          
           <div class="main-title-next"></div>
         </div>
-        <div class="main-inner" id="editor-outer">
-          <div class="main-content-area" id="editor-cards">
+        <div class="main-inner">
+          <div class="main-content-area">
             <div class="practice-card">
             </div>
             <div class="practice-card-buttons">
@@ -22,13 +22,8 @@ class PracticeView {
               </div>
             </div>
           </div>
-          <div class="main-sidebar" id="editor-sidebar">
-            <div class="practice-score">
-              <h4>Session Progress:<h4>
-              <p>Completed: 8/12</p>
-              <p>Correct: 5</p>
-              <p>Incorrect: 3</p>
-            </div>
+          <div class="main-sidebar">
+            ${Forms.viewScoreCard}
           </div>
        </div>
     `
