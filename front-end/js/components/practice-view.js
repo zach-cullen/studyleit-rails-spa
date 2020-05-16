@@ -1,5 +1,5 @@
 // provides html strings for rendering review deck view
-class Practice {
+class PracticeView {
   static viewDeckPractice() {
     const deck = Content.findDeckFromCurrentView()
     return `
