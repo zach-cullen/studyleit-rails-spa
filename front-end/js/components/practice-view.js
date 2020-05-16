@@ -8,8 +8,7 @@ class PracticeView {
             < Back to Dash
           </div>
           <div class="main-title-header">
-            <h1>Practice</h1>
-            <h3>${deck.title}</h3>
+            <h1>${deck.title}</h1>
           </div>          
           <div class="main-title-next"></div>
         </div>
