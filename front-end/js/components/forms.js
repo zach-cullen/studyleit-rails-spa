@@ -44,5 +44,24 @@ class Forms {
     `
   }
 
+  // provides hhtml string for rendering scorecard
+  // score data not yet persisted, but will be refactored to form that saves score
+  static get viewScoreCard() {
+    return `
+    <div class="form-wrapper">
+      <div class="form-header">Scorecard</div>
+      <div class="form-content">
+      <div class="scorecard-section" id="scorecard-cards-completed">
+        <h3>Completed:<h3>
+        <h1>12/6</h1>
+      </div>
+      <div class="scorecard-section" id="scorecard-cards-correct">
+        <h3>Correct:<h3>
+        <h1>70%</h1>
+      </div>
+      </form>
+    </div>
+    `
+  }
 
 }
