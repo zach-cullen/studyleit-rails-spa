@@ -53,16 +53,16 @@
 }
 
 
-.dash-deck-delete {
+#dash-deck-delete {
   background-image: url("../assets/images/material-icons/delete_sweep_30px.svg");
 
 }
 
-.dash-deck-edit {
+#dash-deck-edit {
   background-image: url("../assets/images/material-icons/mode_30px.svg");
 
 }
 
-.dash-deck-play {
+#dash-deck-play {
   background-image: url("../assets/images/material-icons/play_arrow_30px.svg");
 }

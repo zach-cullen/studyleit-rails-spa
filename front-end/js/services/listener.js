@@ -23,9 +23,7 @@ class Listener {
         State.setViewToDeckEditor(deck_id)
         DOM.renderMainContainer()
         break
-      case "dash-deck-delete":
-      case "dash-deck-edit":
-      case "dash-deck-play":
+      case "dash-deck-tab":
         this.handleDashDeckTabClick(e)
         break
       case "edit-card-tab":
@@ -66,7 +64,7 @@ class Listener {
   // gets value of deck and calls a Content action for that deck
   static handleDashDeckTabClick(e) {
     const deck_id = e.target.value
-    switch(e.target.className) {
+    switch(e.target.id) {
      case "dash-deck-delete":
         Content.requestDeleteDeck(deck_id)
         break
