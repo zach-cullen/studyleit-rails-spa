@@ -28,6 +28,8 @@
   border-radius: 5px;
 }
 
+/* SET WIDTH BELOW: Child elements of form content control the width of form, parent styles are flexible */
+
 .text-input {
   font-size: 0.8rem;
   width: 11rem;
