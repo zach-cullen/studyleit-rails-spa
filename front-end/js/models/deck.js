@@ -7,6 +7,10 @@ class Deck {
     this.cards = []
   }
 
+  createPracticeSession() {
+    this.practiceSession = new PracticeSession(this.cards.length)
+  }
+
   saveCardToDeck(card) {
     if (card instanceof Card) {
       this.cards.push(card)
