@@ -15,9 +15,20 @@ class PracticeView {
         </div>
         <div class="main-inner" id="editor-outer">
           <div class="main-content-area" id="editor-cards">
-            ${Editor.viewAllEditorCards(deck)}
+            <div class="practice-card">
+            </div>
+            <div class="practice-card-buttons">
+              <div class="show-answer-button">
+              </div>
+            </div>
           </div>
           <div class="main-sidebar" id="editor-sidebar">
+            <div class="practice-score">
+              <h4>Session Progress:<h4>
+              <p>Completed: 8/12</p>
+              <p>Correct: 5</p>
+              <p>Incorrect: 3</p>
+            </div>
           </div>
        </div>
     `
