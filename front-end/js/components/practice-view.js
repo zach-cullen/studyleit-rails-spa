@@ -14,23 +14,43 @@ class PracticeView {
         </div>
         <div class="main-inner">
           <div class="main-content-area">
-            <div class="practice-card">
-              <div class="practice-card-header">
-                <h3>Question:<h3>
-              </div>
-              <div class="practice-card-body">
-                <h6>What is the difference between prototypal inheritance and class inheritance?</h6>
-              </div>
-            </div>
-            <div class="practice-card-buttons">
-              ${this.viewShowAnswerButton()}
-            </div>
+            ${this.viewCardQuestion()}
           </div>
           <div class="main-sidebar">
             ${Forms.viewScoreCard}
           </div>
        </div>
     `
+  }
+
+  static viewCardQuestion() {
+    return `
+      <div class="practice-card">
+        <div class="practice-card-header">
+          <h3>Question:<h3>
+        </div>
+        <div class="practice-card-body">
+          <h6>What is the difference between prototypal inheritance and class inheritance?</h6>
+        </div>
+      </div>
+      <div class="practice-card-buttons">
+        ${this.viewShowAnswerButton()}
+      </div>`
+  }
+
+  static viewCardAnswer() {
+    return `
+      <div class="practice-card">
+        <div class="practice-card-header">
+          <h3>Answer:<h3>
+        </div>
+        <div class="practice-card-body">
+          <h6>One is JavaScript-y and one is Java-y</h6>
+        </div>
+      </div>
+      <div class="practice-card-buttons">
+        ${this.viewScoreButtons()}
+      </div>`
   }
 
   static viewShowAnswerButton() {
@@ -51,6 +71,5 @@ class PracticeView {
       </button>
     </div>`
   }
-
 }
 
