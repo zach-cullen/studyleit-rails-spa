@@ -91,10 +91,20 @@ class Listener {
   }
 
   static handlePracticeButtonClick(e) {
+    const practice = Content.findCurrentPracticeSessionUsingState()
     switch(e.target.id) {
       case "practice-card-button-show":
-        console.log("Please show answer?")
         State.setViewToShowAnswer()
+        DOM.renderMainContainer()
+        break
+      case "practice-card-button-correct":
+        practice.logScore(true)
+        State.setViewToShowQuestion()
+        DOM.renderMainContainer()
+        break
+      case "practice-card-button-incorrect":
+        practice.logScore(false)
+        State.setViewToShowQuestion()
         DOM.renderMainContainer()
         break
     }
