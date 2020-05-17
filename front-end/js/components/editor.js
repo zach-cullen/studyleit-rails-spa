@@ -3,7 +3,7 @@ class Editor {
 
   static viewDeckEditor() {
     // relies on State class to provide id of current deck
-    const deck = Content.allDecks.find((d) => d.id == State.currentView.id)
+    const deck = Content.findDeckFromCurrentView()
     return `
         <div class="main-title">
           <div class="main-title-back">
