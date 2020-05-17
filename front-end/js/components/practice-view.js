@@ -2,7 +2,6 @@
 class PracticeView {
   static viewDeckPractice() {
     const deck = Content.findDeckFromCurrentView()
-    console.log(deck.currentCard())
     return `
         <div class="main-title">
           <div class="main-title-back">
