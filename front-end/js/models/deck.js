@@ -13,9 +13,14 @@ class Deck {
     this.practiceSession = new PracticeSession(this.cards.length)
   }
 
+  // use practice session attributes to return an instance of card belonging to a deck
   currentCard() {
-    return this.cards[this.practiceSession.currentCardIndex]
-    // return this.cards[this.practiceSession.currentCardIndex]
+    // shuffled is an array of integers 0..cards.length that has been shuffled randomly
+    const shuffled = this.practiceSession.shuffler
+    // currentCardIndex progresses from 0 and counts up normally as the practice Session progresses
+    const i = this.practiceSession.currentCardIndex
+    // returns the current card from the shuffled deck
+    return this.cards[shuffled[i]]
   }
 
   saveCardToDeck(card) {
