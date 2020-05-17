@@ -6,7 +6,7 @@ class PracticeSession {
     this.cardCount = cardCount
     this.currentCardIndex = 0
     this.correctCardsCount = 0
-    this.shuffler =  PracticeSession.makeShuffler(cardCount)
+    this.shuffler = PracticeSession.makeShuffler(cardCount)
   }
 
   // mutates attributes of this Practice Session based on boolean argument recorded when a question score is recorded
