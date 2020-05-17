@@ -15,7 +15,7 @@ class PracticeView {
         </div>
         <div class="main-inner">
           <div class="main-content-area">
-            ${this.renderCurrentCardView()}
+            ${this.renderCurrentCardView(deck)}
           </div>
           <div class="main-sidebar">
             ${Forms.viewScoreCard}
@@ -24,18 +24,19 @@ class PracticeView {
     `
   }
 
-  static renderCurrentCardView() {
-    return State.currentView.showAnswer == true ? this.viewCardAnswer() : this.viewCardQuestion()
+  static renderCurrentCardView(deck) {
+    const card = deck.currentCard()
+    return State.currentView.showAnswer == true ? this.viewCardAnswer(card) : this.viewCardQuestion(card)
   }
 
-  static viewCardQuestion() {
+  static viewCardQuestion(card) {
     return `
       <div class="practice-card">
         <div class="practice-card-header">
           <h3>Question:<h3>
         </div>
         <div class="practice-card-body">
-          <h6>What is the difference between prototypal inheritance and class inheritance?</h6>
+          <h6>${card.question}</h6>
         </div>
       </div>
       <div class="practice-card-buttons">
@@ -43,7 +44,7 @@ class PracticeView {
       </div>`
   }
 
-  static viewCardAnswer() {
+  static viewCardAnswer(card) {
     console.log("SHOW ANSWER!")
     return `
       <div class="practice-card">
@@ -51,7 +52,7 @@ class PracticeView {
           <h3>Answer:<h3>
         </div>
         <div class="practice-card-body">
-          <h6>One is JavaScript-y and one is Java-y</h6>
+          <h6>${card.answer}</h6>
         </div>
       </div>
       <div class="practice-card-buttons">
