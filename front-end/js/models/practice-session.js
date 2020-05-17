@@ -21,6 +21,10 @@ class PracticeSession {
     }
   }
 
+  renderProgress() {
+    return `${this.currentCardIndex} / ${this.cardCount}`
+  }
+
 
   // returns an array of randomized integers representing indexes in array of cards of cardCount length
   static makeShuffler(cardCount) {
