@@ -52,11 +52,11 @@ class Forms {
       <div class="form-header">Scorecard</div>
       <div class="form-content">
       <div class="scorecard-section" id="scorecard-cards-completed">
-        <h3>Completed:<h3>
+        <h5>Completed:<h5>
         <h1>12/6</h1>
       </div>
       <div class="scorecard-section" id="scorecard-cards-correct">
-        <h3>Correct:<h3>
+        <h5>Correct:<h5>
         <h1>70%</h1>
       </div>
       </form>
