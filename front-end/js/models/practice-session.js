@@ -21,8 +21,17 @@ class PracticeSession {
     }
   }
 
+  // renders a string showing the number of cards that have been answered as a fraction of the total number of cards in deck
   renderProgress() {
     return `${this.currentCardIndex} / ${this.cardCount}`
+  }
+
+  // renders a string representing the percentage of questions that have been answered correctly so far
+  renderScorePercentage() {
+    const a = this.correctCardsCount
+    // ternary changes current card index to 1 if 0 to prevent NaN result
+    const b = this.currentCardIndex === 0 ? 1 : this.currentCardIndex
+    return `${Math.floor((a / b) * 100)}%`
   }
 
   stillInProgress() {
