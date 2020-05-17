@@ -55,4 +55,8 @@ class State {
     this.currentView.showAnswer = true
   }
 
+  static setViewToShowQuestion() {
+    this.currentView.showAnswer = false
+  }
+
 }
