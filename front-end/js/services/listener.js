@@ -32,6 +32,9 @@ class Listener {
         State.setViewToDashboard()
         DOM.renderMainContainer()
         break
+      case "practice-card-button":
+        this.handlePracticeButtonClick(e)
+        break
     }
   }
 
@@ -83,7 +86,17 @@ class Listener {
       case "edit-card-tab-delete":
         // send card_id from button value to Content function for Api call
         Content.requestDeleteCard(e.target.value)
-      break
+        break
+    }
+  }
+
+  static handlePracticeButtonClick(e) {
+    switch(e.target.id) {
+      case "practice-card-button-show":
+        console.log("Please show answer?")
+        State.setViewToShowAnswer()
+        DOM.renderMainContainer()
+        break
     }
   }
 
