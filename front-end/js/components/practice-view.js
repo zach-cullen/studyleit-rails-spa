@@ -1,4 +1,5 @@
 // provides html strings for rendering review deck view
+// has functions that decide which html strings to return within component
 class PracticeView {
   static viewDeckPractice() {
     const deck = Content.findDeckFromCurrentView()
@@ -24,8 +25,15 @@ class PracticeView {
   }
 
   static renderCurrentCardView(deck) {
-    const card = deck.currentCard()
-    return State.currentView.showAnswer == true ? this.viewCardAnswer(card) : this.viewCardQuestion(card)
+
+    // renders instance of card only if the practice session is still in progress
+    // protects app from erroring by looking for a card with an out of bounds index
+    if (deck.practiceSession.stillInProgress()) {
+      const card = deck.currentCard()
+      return State.currentView.showAnswer == true ? this.viewCardAnswer(card) : this.viewCardQuestion(card)
+    } else {
+      console.log("PRACTICE SESSION COMPLETE!")
+    }
   }
 
   static viewCardQuestion(card) {
@@ -44,7 +52,6 @@ class PracticeView {
   }
 
   static viewCardAnswer(card) {
-    console.log("SHOW ANSWER!")
     return `
       <div class="practice-card">
         <div class="practice-card-header">
