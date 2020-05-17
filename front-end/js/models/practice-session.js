@@ -1,5 +1,6 @@
 class PracticeSession {
 
+  // Should only be called by Deck createPracticeSession. this ensures that a practice session always belongs to a deck and can only be accessed as a deck attribute
   constructor(cardCount) {
     this.cardCount = cardCount
     this.currentCardIndex = 0
@@ -18,6 +19,7 @@ class PracticeSession {
       console.log("TYPE ERROR: logScore can only receive booleans as arguments")
     }
   }
+
 
   // returns an array of randomized integers representing indexes in array of cards of cardCount length
   static makeShuffler(cardCount) {
