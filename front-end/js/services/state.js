@@ -6,7 +6,7 @@ class State {
   static currentView = {
     view: false,
     id: false,
-    showAnswer: false
+    showAnswer: true
   } 
 
   static resetView() {
@@ -36,24 +36,20 @@ class State {
   }
 
   static setViewToDashboard() {
-    this.currentView = {
-      view: "dashboard",
-      id: false
-    }
+    this.resetView()
+    this.currentView.view = "dashboard"
   }
 
   static setViewToDeckEditor(deck_id) {
-    this.currentView = {
-      view: "deck-editor",
-      id: deck_id
-    }
+    this.resetView()
+    this.currentView.view = "deck-editor"
+    this.currentView.id = deck_id
   }
 
   static setViewToPracticeView(deck_id) {
-    this.currentView = {
-      view: "practice-view",
-      id: deck_id
-    }
+    this.resetView()
+    this.currentView.view = "practice-view"
+    this.currentView.id = deck_id
   }
 
 }

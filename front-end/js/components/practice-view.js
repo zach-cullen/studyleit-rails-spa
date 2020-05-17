@@ -14,13 +14,17 @@ class PracticeView {
         </div>
         <div class="main-inner">
           <div class="main-content-area">
-            ${this.viewCardQuestion()}
+            ${this.renderCurrentCardView()}
           </div>
           <div class="main-sidebar">
             ${Forms.viewScoreCard}
           </div>
        </div>
     `
+  }
+
+  static renderCurrentCardView() {
+    return State.currentView.showAnswer == true ? this.viewCardAnswer() : this.viewCardQuestion()
   }
 
   static viewCardQuestion() {
@@ -39,6 +43,7 @@ class PracticeView {
   }
 
   static viewCardAnswer() {
+    console.log("SHOW ANSWER!")
     return `
       <div class="practice-card">
         <div class="practice-card-header">
