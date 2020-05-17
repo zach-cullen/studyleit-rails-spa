@@ -20,6 +20,11 @@ class Content {
     return this.findDeckById(State.currentView.id)
   }
 
+  static findCurrentPracticeSessionUsingState() {
+    const deck = this.findDeckFromCurrentView()
+    return deck.practiceSession
+  }
+
   static findDeckById(deck_id) {
     return this.allDecks.find((d) => d.id == deck_id)
   }
