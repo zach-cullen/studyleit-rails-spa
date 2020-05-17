@@ -23,9 +23,7 @@ class PracticeView {
               </div>
             </div>
             <div class="practice-card-buttons">
-              <button class="practice-card-button" id="practice-card-button-show">
-                Show Answer
-              </button>
+
             </div>
           </div>
           <div class="main-sidebar">
@@ -34,4 +32,12 @@ class PracticeView {
        </div>
     `
   }
+
+  static viewShowAnswerButton() {
+    return `
+    <button class="practice-card-button" id="practice-card-button-show">
+      Show Answer
+    </button>`
+  }
 }
+
