@@ -1,6 +1,7 @@
 class PracticeSession {
 
-  // Should only be called by Deck createPracticeSession. this ensures that a practice session always belongs to a deck and can only be accessed as a deck attribute
+  // Should only be called by deck createPracticeSession. this ensures that a practice session always belongs to a deck and can only be accessed as a deck attribute
+  // timing: see Content.loadUserDecks
   constructor(cardCount) {
     this.cardCount = cardCount
     this.currentCardIndex = 0

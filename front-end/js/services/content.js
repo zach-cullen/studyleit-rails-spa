@@ -46,6 +46,8 @@ class Content {
       const deck = new Deck(deckData)
       // create cards and add to deck
       deck.saveCardsFromJson(deckData.cards)
+      // create practice Session after saving cards, because it relies on length of cards
+      deck.createPracticeSession()
       deck.save()
     })
     DOM.renderMainContainer()
