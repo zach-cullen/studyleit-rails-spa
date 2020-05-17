@@ -46,14 +46,14 @@ class Forms {
 
   // provides hhtml string for rendering scorecard
   // score data not yet persisted, but will be refactored to form that saves score
-  static get viewScoreCard() {
+  static viewScoreCard(practiceSession) {
     return `
     <div class="form-wrapper">
       <div class="form-header">Scorecard</div>
       <div class="form-content">
       <div class="scorecard-section" id="scorecard-cards-completed">
         <h5>Completed:<h5>
-        <h1>12/6</h1>
+        <h1>${practiceSession.renderProgress()}</h1>
       </div>
       <div class="scorecard-section" id="scorecard-cards-correct">
         <h5>Correct:<h5>

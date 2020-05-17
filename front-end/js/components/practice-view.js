@@ -17,7 +17,7 @@ class PracticeView {
             ${this.renderCurrentCardView(deck)}
           </div>
           <div class="main-sidebar">
-            ${Forms.viewScoreCard}
+            ${Forms.viewScoreCard(deck.practiceSession)}
           </div>
        </div>
     `
