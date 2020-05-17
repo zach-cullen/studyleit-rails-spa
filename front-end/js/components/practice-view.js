@@ -23,7 +23,14 @@ class PracticeView {
               </div>
             </div>
             <div class="practice-card-buttons">
-
+              <div class="practice-card-score-buttons-wrap">
+                <button class="practice-card-button" id="practice-card-button-correct">
+                  Correct
+                </button>
+                <button class="practice-card-button" id="practice-card-button-incorrect">
+                  Incorrect
+                </button>
+              </div>
             </div>
           </div>
           <div class="main-sidebar">
