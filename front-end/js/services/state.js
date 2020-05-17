@@ -5,13 +5,15 @@ class State {
   // initialize with no information, will be reset by getCurrentUser and subsequent actions
   static currentView = {
     view: false,
-    id: false
+    id: false,
+    showAnswer: false
   } 
 
   static resetView() {
     this.currentView = {
       view: false,
-      id: false
+      id: false,
+      showAnswer: false
     }
   }
 
