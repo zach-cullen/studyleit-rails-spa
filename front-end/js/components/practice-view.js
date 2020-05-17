@@ -23,14 +23,7 @@ class PracticeView {
               </div>
             </div>
             <div class="practice-card-buttons">
-              <div class="practice-card-score-buttons-wrap">
-                <button class="practice-card-button" id="practice-card-button-correct">
-                  Correct
-                </button>
-                <button class="practice-card-button" id="practice-card-button-incorrect">
-                  Incorrect
-                </button>
-              </div>
+              ${this.viewShowAnswerButton()}
             </div>
           </div>
           <div class="main-sidebar">
@@ -46,5 +39,18 @@ class PracticeView {
       Show Answer
     </button>`
   }
+
+  static viewScoreButtons() {
+    return `
+    <div class="practice-card-score-buttons-wrap">
+      <button class="practice-card-button" id="practice-card-button-correct">
+        Correct
+      </button>
+      <button class="practice-card-button" id="practice-card-button-incorrect">
+        Incorrect
+      </button>
+    </div>`
+  }
+
 }
 
