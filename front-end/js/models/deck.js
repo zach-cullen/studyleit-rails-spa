@@ -14,12 +14,13 @@ class Deck {
   }
 
   // use practice session attributes to return an instance of card belonging to a deck
+  // WARNING: will error if this method is called without checking of practiceSession is complete (currentCardIndex will be out of bounds)
+  // see PracticeView renderCurrentCardView for example of proper usage 
   currentCard() {
     // shuffled is an array of integers 0..cards.length that has been shuffled randomly
     const shuffled = this.practiceSession.shuffler
     // currentCardIndex progresses from 0 and counts up normally as the practice Session progresses
     const i = this.practiceSession.currentCardIndex
-    // returns the current card from the shuffled deck
     return this.cards[shuffled[i]]
   }
 
