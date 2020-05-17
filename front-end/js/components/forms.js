@@ -57,7 +57,7 @@ class Forms {
       </div>
       <div class="scorecard-section" id="scorecard-cards-correct">
         <h5>Correct:<h5>
-        <h1>70%</h1>
+        <h1>${practiceSession.renderScorePercentage()}</h1>
       </div>
       </form>
     </div>
