@@ -6,7 +6,7 @@ class State {
   static currentView = {
     view: false,
     id: false,
-    showAnswer: true
+    showAnswer: false
   } 
 
   static resetView() {
@@ -47,9 +47,12 @@ class State {
   }
 
   static setViewToPracticeView(deck_id) {
-    this.resetView()
     this.currentView.view = "practice-view"
     this.currentView.id = deck_id
+  }
+
+  static setViewToShowAnswer() {
+    this.currentView.showAnswer = true
   }
 
 }
