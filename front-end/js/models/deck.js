@@ -7,8 +7,15 @@ class Deck {
     this.cards = []
   }
 
+  // ONLY place new practice session can be created this ensures that each deck only has one practice session
+  // also ensures that specific practice session can only be accessed in association with a deck
   createPracticeSession() {
     this.practiceSession = new PracticeSession(this.cards.length)
+  }
+
+  currentCard() {
+    return this.cards[this.practiceSession.currentCardIndex]
+    // return this.cards[this.practiceSession.currentCardIndex]
   }
 
   saveCardToDeck(card) {
