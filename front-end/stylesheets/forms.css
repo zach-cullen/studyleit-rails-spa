@@ -62,6 +62,5 @@
 
 .form-submit:hover {
   background-color: rgba(255, 218, 125, 0.7);
-  /* background-color: #FAEED0; */
   border: 1px solid #FFDA7C;
 }

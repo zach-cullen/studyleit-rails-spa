@@ -19,12 +19,13 @@ class PracticeView {
                 <h3>Question:<h3>
               </div>
               <div class="practice-card-body">
-                <h5>What is the difference between prototypal inheritance and class inheritance?</h5>
+                <h6>What is the difference between prototypal inheritance and class inheritance?</h6>
               </div>
             </div>
             <div class="practice-card-buttons">
-              <div class="show-answer-button">
-              </div>
+              <button class="practice-card-button" id="practice-card-button-show">
+                Show Answer
+              </button>
             </div>
           </div>
           <div class="main-sidebar">
