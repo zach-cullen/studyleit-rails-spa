@@ -8,11 +8,13 @@
 
 .container {
   max-width: 1050px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
 }
 
 nav {
-  /* background-color: purple; */
+  margin: 0 0.75rem;
   height: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -51,8 +53,7 @@ nav {
 }
 
 #main {
-  /* background-color: blue; */
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   min-height: 20rem;
 }
 
