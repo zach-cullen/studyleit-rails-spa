@@ -108,7 +108,9 @@ class Listener {
         DOM.renderMainContainer()
         break
       case "practice-card-button-replay":
-        console.log("REPEAT!")
+        // resets the current deck's practice session to a new instance
+        Content.findDeckFromCurrentView().createPracticeSession()
+        DOM.renderMainContainer()
         break
     }
   }
