@@ -19,7 +19,7 @@ class Listener {
         this.handleNavButtonClick(e)
         break
       case "dash-deck-title":
-        State.setViewToDeckEditor(e.target.id)
+        State.setViewToPracticeView(e.target.id)
         DOM.renderMainContainer()
         break
       case "dash-deck-tab":
