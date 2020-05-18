@@ -26,8 +26,9 @@
 }
 
 .practice-card-body {
+  white-space: pre-line;
   width: auto;
-  margin: 0 3rem;
+  margin: 0 3rem 1.5rem;
   /* background-color: orange; */
 }
 
