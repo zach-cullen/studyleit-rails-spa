@@ -32,7 +32,7 @@ class PracticeView {
       const card = deck.currentCard()
       return State.currentView.showAnswer == true ? this.viewCardAnswer(card) : this.viewCardQuestion(card)
     } else {
-      console.log("PRACTICE SESSION COMPLETE!")
+      return this.viewCompletedMessageCard(deck)
     }
   }
 
@@ -82,6 +82,24 @@ class PracticeView {
       <button class="practice-card-button" id="practice-card-button-incorrect">
         Incorrect
       </button>
+    </div>`
+  }
+
+  static viewCompletedMessageCard(deck) {
+    return `
+    <div class="practice-card">
+      <div class="practice-card-header">
+        <br>
+        <h1>Practice Complete!</h1>
+      </div>
+      <div class="practice-card-header">
+        <br>
+        <h3>Your Score:</h3>
+        <h1>${deck.practiceSession.renderScorePercentage()}</h1>
+        <button class="practice-card-button" id="practice-card-button-replay">Practice Again?</button>
+      </div>
+    </div>
+    <div class="practice-card-buttons">
     </div>`
   }
 }
