@@ -107,6 +107,9 @@ class Listener {
         State.setViewToShowQuestion()
         DOM.renderMainContainer()
         break
+      case "practice-card-button-replay":
+        console.log("REPEAT!")
+        break
     }
   }
 
