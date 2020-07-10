@@ -2,6 +2,23 @@
 
 Studyleit is an Object-Oriented JavaScript application for creating and practicing decks of flash cards that is built on a Ruby-on-Rails API backend. It allows users to create decks of question and answer cards, quiz themselves, and see a score for each practice session.
 
+## Video Walk Through: 
+
+[Studyleit App Video Walkthrough](https://youtu.be/JCuSaKACon4)
+
+## Features
+
+#### **Create New Decks**
+![](https://i.imgur.com/jKawA9o.gif)
+
+#### **Add & Remove Cards from Deck**
+![](https://i.imgur.com/bcAr4IG.gif)
+
+#### **Practice Flash Cards**
+![](https://i.imgur.com/xi397kg.gif)
+
+
+
 ## Getting Started / Installing
 
 ### Instructions for Mac:
