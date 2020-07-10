@@ -9,10 +9,10 @@ Studyleit is an Object-Oriented JavaScript application for creating and practici
 ## Features
 
 #### **Create New Decks**
-![](https://i.imgur.com/jKawA9o.gif)
+![](https://i.imgur.com/4kup5dd.gif)
 
 #### **Add & Remove Cards from Deck**
-![](https://i.imgur.com/bcAr4IG.gif)
+![](https://i.imgur.com/yhIuU8L.gif)
 
 #### **Practice Flash Cards**
 ![](https://i.imgur.com/xi397kg.gif)
